@@ -2,15 +2,16 @@
 call pathogen#infect()
 call pathogen#helptags()                    " load plugin help files
  
+" syntax highlighting
 syntax on
+filetype plugin indent on
+
 if has('gui_running')
     set background=light
     colorscheme solarized
 else
     set background=dark
 endif
-
-filetype plugin indent on
 
 " Alternative to <ESC>
 inoremap jk <Esc>
@@ -64,6 +65,8 @@ set dictionary+=/home/jsteven5/.vim/spell/en.utf-8.add
 set nocompatible
 set modelines=0
 
+" indentation
+set autoindent
 set tabstop=4
 set expandtab
 set shiftwidth=4
@@ -71,7 +74,6 @@ set softtabstop=4
 
 set encoding=utf-8
 set scrolloff=3
-set autoindent
 set showmode
 set showcmd
 set hidden
@@ -84,7 +86,6 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set relativenumber
-set undofile
 
 " Set up word wrapping on individual words with nice settings
 set wrap
@@ -115,6 +116,7 @@ set completeopt=menuone,longest,preview
 let g:flake8_ignore="E265" "Ignore comments with ## error
 
 " Store backup and swap files in a central directory
+set undofile
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
