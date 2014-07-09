@@ -120,3 +120,6 @@ set undofile
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
+
+" NERDTree easy access
+map <silent> <C-n> :NERDTreeFocus<CR>
