@@ -122,4 +122,9 @@ set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
 " NERDTree easy access
-map <silent> <C-n> :NERDTreeFocus<CR>
+map <silent> <leader>n :NERDTreeFocus<CR>
+
+" Vim-IPython run cell change shortcut
+map  <buffer> <silent> <S-F5>      <C-o><Plug>(IPython-RunCell)
+imap  <buffer> <silent> <S-F5>      <C-o><Plug>(IPython-RunCell)
+
