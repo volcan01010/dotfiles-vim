@@ -9,13 +9,14 @@ filetype plugin indent on
 if has('gui_running')
     set background=light
     colorscheme solarized
+    set guioptions-=T
 else
     set background=dark
 endif
 
 " Alternative to <ESC>
 inoremap jk <Esc>
-inoremap kj <Esc>
+inoremap jj <Esc>
 
 " Alternative to access Ex mode
 nnoremap ;; : 
@@ -33,9 +34,9 @@ nnoremap <C-l> <C-w>l
 " Set up saving of settings to viminfo
 set viminfo='100,f1
 
-" Save fold status between sessions
-au BufWinLeave ?* mkview
-au BufWinEnter ?* silent loadview
+"" Save fold status between sessions
+"au BufWinLeave ?* mkview
+"au BufWinEnter ?* silent loadview
 
 " Move between screen lines when wrapping lots of text
 nnoremap j gj
@@ -53,7 +54,7 @@ nnoremap <C-l> <C-w>l
 set guitablabel=%N:\ %t\ %M
 
 " Set the font for the gui
-set guifont=DejaVu\ Sans\ Mono\ 13
+set guifont=DejaVu\ Sans\ Mono\ 12
 
 " Set line numbers to be on by default
 set nu!
@@ -92,7 +93,7 @@ set wrap
 set linebreak
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
+set colorcolumn=80
 
 " 'Tame' searching and replacing
 " nnoremap / /\v " Only use very magic for certain searches
@@ -106,6 +107,16 @@ set hlsearch " Highlight results
 " Wipe the highighting on searches
 """""let mapleader = "\"
 nnoremap <leader><space> :noh<cr>
+
+" NERDTree easy access
+map <silent> <leader>n :NERDTreeFocus<CR>
+
+" Indentation and selecting
+vnoremap < <gv  " better indentation
+vnoremap > >gv  " better indentation
+map <Leader>a ggVG  " select all
+" Set default clipboard to plus register
+set clipboard=unnamedplus
 
 " Supertab
 au FileType python set omnifunc=pythoncomplete#Complete
@@ -121,10 +132,26 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
-" NERDTree easy access
-map <silent> <leader>n :NERDTreeFocus<CR>
-
 " Vim-IPython run cell change shortcut
 map  <buffer> <silent> <S-F5>      <C-o><Plug>(IPython-RunCell)
 imap  <buffer> <silent> <S-F5>      <C-o><Plug>(IPython-RunCell)
+
+" Add thesaurus files
+set thesaurus+=/home/jsteven5/dotfiles/vim/thesaurus/files/mthesaur.txt
+set thesaurus+=/home/jsteven5/dotfiles/vim/thesaurus/files/roget13a.txt
+
+" Settings for Syntastic code checking
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_mode_map = {
+    \ "mode": "passive",
+    \ "active_filetypes": ["ruby", "php"],
+    \ "passive_filetypes": ["puppet"] }
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
 
