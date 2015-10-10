@@ -11,8 +11,15 @@ if has('gui_running')
     colorscheme solarized
     set guioptions-=T
 else
+    " Additional solarized settings
     set background=dark
+    let g:solarized_termtrans=1
+    let g:solarized_termcolors=256
+    let g:solarized_contrast="high"
+    let g:solarized_visibility="high"
+    colorscheme solarized
 endif
+
 
 " Alternative to <ESC>
 inoremap jk <Esc>
@@ -109,7 +116,7 @@ set hlsearch " Highlight results
 nnoremap <leader><space> :noh<cr>
 
 " NERDTree easy access
-map <silent> <leader>n :NERDTreeFocus<CR>
+map <silent> <leader>n :NERDTreeToggle<CR>
 
 " Indentation and selecting
 vnoremap < <gv  " better indentation
@@ -155,3 +162,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
+" Settings for Tagbar
+let g:tagbar_usearrows = 1
+nnoremap <leader>l :TagbarToggle<CR>
