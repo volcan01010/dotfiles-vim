@@ -144,8 +144,8 @@ map  <buffer> <silent> <S-F5>      <C-o><Plug>(IPython-RunCell)
 imap  <buffer> <silent> <S-F5>      <C-o><Plug>(IPython-RunCell)
 
 " Add thesaurus files
-set thesaurus+=/home/jsteven5/dotfiles/vim/thesaurus/files/mthesaur.txt
-set thesaurus+=/home/jsteven5/dotfiles/vim/thesaurus/files/roget13a.txt
+"set thesaurus+=/home/jsteven5/dotfiles/vim/thesaurus/files/mthesaur.txt
+"set thesaurus+=/home/jsteven5/dotfiles/vim/thesaurus/files/roget13a.txt
 
 " Settings for Syntastic code checking
 set statusline+=%#warningmsg#
