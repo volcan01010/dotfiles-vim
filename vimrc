@@ -134,10 +134,10 @@ set completeopt=menuone,longest,preview
 let g:flake8_ignore="E265" "Ignore comments with ## error
 
 " Store backup and swap files in a central directory
-set undofile
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
-set undodir=~/.vim/undo//
+"set undofile
+"set backupdir=~/.vim/backup//
+"set directory=~/.vim/swap//
+"set undodir=~/.vim/undo//
 
 " Vim-IPython run cell change shortcut
 map  <buffer> <silent> <S-F5>      <C-o><Plug>(IPython-RunCell)
